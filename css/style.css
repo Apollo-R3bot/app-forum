@@ -1,5 +1,5 @@
 :root{
-    --blue: #86C8BC;
+    --blue: #2b97c9;
     --white:    #fff;
     --gray: #efefef;
     --gray-100: #f7f7f7;
@@ -14,25 +14,47 @@
     --green-100: #65B741;
     --green-200: #379237;
     --green-300: #54B435;
-    
-    
-    
+    --black: #001C30;
 }
 body{
     padding: 0;
     margin: 0;
+    background: var(--black);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 header{
     border-bottom: 1px solid var(--blue);
-    /* background: var(--blue); */
+    /* background: var(--white); */
     z-index: 999;
+
+}
+header nav{
+    padding: 0em 5.6em;
 }
 header nav ul li{
     text-transform: uppercase;
+    color: var(--white);
 }
 main{
     /* background: var(--gray-100); */
     padding: 10px;
+}
+.btn{
+    border-radius: 12px;
+    box-shadow: none;
+}
+#loginModal .modal-dialog {
+    border: none;
+}
+#loginModal .modal-dialog .modal-content{
+    background: var(--black);
+}
+#loginModal .modal-dialog .modal-content input[type='text'], input[type='password']{
+    background: var(--black);
+    box-shadow: none;
+}
+.card, .modal{
+    border-radius: 12px;
 }
 main .container{
     margin-top: 40px;
@@ -47,13 +69,14 @@ main .category ul li a{
     width: 100%;
     padding: 6px;
     text-decoration: none;
-    color: var(--gray-600);
+    color: var(--gray-400);
     text-transform: capitalize;
 }
 main .category ul li a:hover{
     color: var(--blue);
     border: 1px solid var(--blue);
     border-radius: 8px;
+    background: var(--white);
 }
 main .thread a{
     text-decoration: none;
@@ -64,20 +87,78 @@ main .thread .card:hover{
     cursor: pointer;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-
+.profile img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-500);
+}
+.btn{
+    box-shadow: none;
+}
 /* footer */
 footer .min-footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--gray-400);
 }
 footer .min-footer{
     border-top: 1px solid var(--blue);
 }
 
-/* Media screen size 650 */
-@media (max-width: 650px) {
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
     .category{
         display: none;
     }
+    header nav{
+        padding: 0;
+    }
+    main a.create-btn{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 999;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    main a.create-btn i{
+        font-size: 2.5em;
+    }
+    main a.create-btn span{
+        display: none;
+    }
+    .card-text, p, h3{
+        font-size: 14px;
+    }
+    p{
+        font-size: 14px;
+    }
+    .profile img{
+        width: 50px;
+        height: 50px;
+    }
+    .card.heading span{
+        display: none;
+    }
 }
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .category{
+        display: none;
+    }
+    header nav{
+        padding: 0;
+    }
+    
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {  }
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {  }
